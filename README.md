@@ -1,8 +1,11 @@
-This project analyses a concrete lattice model for the Z2 topological insulator with the BHZ model. 
+This project studies a lattice realization of the Z2 topological insulator using the BHZ model.
 
-Kwant is not supported natively for Apple silicon Macs. 
+Kwant does not run natively on Apple Silicon. To use Kwant on an M1/M2 Mac, open a Rosetta (x86) shell and create a Conda environment with Python 3.9. Example:
 
-To get around this open terminal with Rossetta and create a Conda virtual environment with Python 3.9 with a one-off x86 subshell under arch -x86_64 zsh.
-
-(kwant-env) MacBookPro:~ NAME$ python -c "import kwant, platform; print(kwant.__version__, platform.machine())" 
-1.5.0 x86_64
+```bash
+arch -x86_64 zsh
+conda create -n kwant-env python=3.9
+conda activate kwant-env
+python -c "import kwant, platform; print(kwant.__version__, platform.machine())"
+# Example output: 1.5.0 x86_64
+```
